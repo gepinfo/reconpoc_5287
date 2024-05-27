@@ -1,0 +1,169 @@
+<svg version="1.1" baseProfile="full" width="1120.0" height="501.0" viewbox="0 0 1120 501" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events">
+<desc >#.interface: fill=lightblue
+#.enumeration: fill=lightgreen
+#.type: fill=lightgray
+[&lt;interface&gt;discrepancy|+created_date: { type: Date; };+created_by: { type: String; };+last_modified_by: { type: String; };+last_modified_date: { type: Date; };+discid: { type: String; };+message: { type: String; };+type: { type: String; }|]
+[&lt;interface&gt;reconciliation|+created_date: { type: Date; };+created_by: { type: String; };+last_modified_by: { type: String; };+last_modified_date: { type: Date; };+reconstart: { type: Date; };+reconend: { type: Date; };+file_one: { type: String; };+file_two: { type: String; };+result_message: { type: String; };+discrepencies: \[{ type: String; ref: &quot;discrepancy&quot;; }\]|]
+[&lt;interface&gt;statement|+created_date: { type: Date; };+created_by: { type: String; };+last_modified_by: { type: String; };+last_modified_date: { type: Date; };+reconid: { type: String; };+type: { type: Type; };+transactiondate: { type: Date; };+details: { type: String; };+debit: { type: Number; };+credit: { type: Number; };+balance: { type: Number; };+ismatch: { type: Boolean; };+matchid: { type: String; }|]
+[&lt;enumeration&gt;Type|BANK;CASHBOOK]</desc>
+<g stroke-width="1.0" text-align="left" font="12pt Helvetica, Arial, sans-serif" font-size="12pt" font-family="Helvetica" font-weight="normal" font-style="normal">
+<g font-family="Helvetica" font-size="12pt" font-weight="bold" font-style="normal" stroke-width="3.0" stroke-linejoin="round" stroke-linecap="round" stroke="#33322E">
+<g stroke="transparent" fill="transparent">
+<rect x="0.0" y="0.0" height="501.0" width="1120.0" stroke="none"></rect>
+</g>
+<g transform="translate(8, 8)" fill="#33322E">
+<g transform="translate(20, 20)">
+<g data-name="discrepancy">
+<g fill="lightblue" stroke="#33322E" data-name="discrepancy">
+<rect x="0.0" y="90.0" height="265.0" width="278.0" data-name="discrepancy"></rect>
+<path d="M0.0 121.0 L278.0 121.0" fill="none" data-name="discrepancy"></path>
+<path d="M0.0 347.0 L278.0 347.0" fill="none" data-name="discrepancy"></path>
+</g>
+<g transform="translate(0, 90)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="discrepancy">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="discrepancy">
+<a id="../application/services/diagrams/serviceModels/discrepancy.ts.discrepancy" xlink:href="../application/services/diagrams/serviceModels/discrepancy.ts"><text x="131.0" y="13.5" stroke="none" text-anchor="middle" data-name="discrepancy">discrepancy</text></a>
+
+</g>
+</g>
+<g transform="translate(0, 121)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="discrepancy">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="discrepancy">
+<text x="0.0" y="13.5" stroke="none" data-name="discrepancy">+created_date: { type: Date</text>
+<text x="0.0" y="28.5" stroke="none" data-name="discrepancy">}</text>
+<text x="0.0" y="43.5" stroke="none" data-name="discrepancy">+created_by: { type: String</text>
+<text x="0.0" y="58.5" stroke="none" data-name="discrepancy">}</text>
+<text x="0.0" y="73.5" stroke="none" data-name="discrepancy">+last_modified_by: { type: String</text>
+<text x="0.0" y="88.5" stroke="none" data-name="discrepancy">}</text>
+<text x="0.0" y="103.5" stroke="none" data-name="discrepancy">+last_modified_date: { type: Date</text>
+<text x="0.0" y="118.5" stroke="none" data-name="discrepancy">}</text>
+<text x="0.0" y="133.5" stroke="none" data-name="discrepancy">+discid: { type: String</text>
+<text x="0.0" y="148.5" stroke="none" data-name="discrepancy">}</text>
+<text x="0.0" y="163.5" stroke="none" data-name="discrepancy">+message: { type: String</text>
+<text x="0.0" y="178.5" stroke="none" data-name="discrepancy">}</text>
+<text x="0.0" y="193.5" stroke="none" data-name="discrepancy">+type: { type: String</text>
+<text x="0.0" y="208.5" stroke="none" data-name="discrepancy">}</text>
+
+</g>
+</g>
+<g transform="translate(0, 347)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="discrepancy">
+<g transform="translate(8, 8)" fill="#33322E" data-name="discrepancy">
+
+</g>
+</g>
+</g>
+<g data-name="reconciliation">
+<g fill="lightblue" stroke="#33322E" data-name="reconciliation">
+<rect x="318.0" y="37.5" height="370.0" width="278.0" data-name="reconciliation"></rect>
+<path d="M318.0 68.5 L596.0 68.5" fill="none" data-name="reconciliation"></path>
+<path d="M318.0 399.5 L596.0 399.5" fill="none" data-name="reconciliation"></path>
+</g>
+<g transform="translate(318, 37.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="reconciliation">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="reconciliation">
+<a id="../application/services/diagrams/serviceModels/reconciliation.ts.reconciliation" xlink:href="../application/services/diagrams/serviceModels/reconciliation.ts"><text x="131.0" y="13.5" stroke="none" text-anchor="middle" data-name="reconciliation">reconciliation</text></a>
+
+</g>
+</g>
+<g transform="translate(318, 68.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="reconciliation">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="reconciliation">
+<text x="0.0" y="13.5" stroke="none" data-name="reconciliation">+created_date: { type: Date</text>
+<text x="0.0" y="28.5" stroke="none" data-name="reconciliation">}</text>
+<text x="0.0" y="43.5" stroke="none" data-name="reconciliation">+created_by: { type: String</text>
+<text x="0.0" y="58.5" stroke="none" data-name="reconciliation">}</text>
+<text x="0.0" y="73.5" stroke="none" data-name="reconciliation">+last_modified_by: { type: String</text>
+<text x="0.0" y="88.5" stroke="none" data-name="reconciliation">}</text>
+<text x="0.0" y="103.5" stroke="none" data-name="reconciliation">+last_modified_date: { type: Date</text>
+<text x="0.0" y="118.5" stroke="none" data-name="reconciliation">}</text>
+<text x="0.0" y="133.5" stroke="none" data-name="reconciliation">+reconstart: { type: Date</text>
+<text x="0.0" y="148.5" stroke="none" data-name="reconciliation">}</text>
+<text x="0.0" y="163.5" stroke="none" data-name="reconciliation">+reconend: { type: Date</text>
+<text x="0.0" y="178.5" stroke="none" data-name="reconciliation">}</text>
+<text x="0.0" y="193.5" stroke="none" data-name="reconciliation">+file_one: { type: String</text>
+<text x="0.0" y="208.5" stroke="none" data-name="reconciliation">}</text>
+<text x="0.0" y="223.5" stroke="none" data-name="reconciliation">+file_two: { type: String</text>
+<text x="0.0" y="238.5" stroke="none" data-name="reconciliation">}</text>
+<text x="0.0" y="253.5" stroke="none" data-name="reconciliation">+result_message: { type: String</text>
+<text x="0.0" y="268.5" stroke="none" data-name="reconciliation">}</text>
+<text x="0.0" y="283.5" stroke="none" data-name="reconciliation">+discrepencies: [{ type: String</text>
+<text x="0.0" y="298.5" stroke="none" data-name="reconciliation">ref: &quot;discrepancy&quot;</text>
+<text x="0.0" y="313.5" stroke="none" data-name="reconciliation">}]</text>
+
+</g>
+</g>
+<g transform="translate(318, 399.5)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="reconciliation">
+<g transform="translate(8, 8)" fill="#33322E" data-name="reconciliation">
+
+</g>
+</g>
+</g>
+<g data-name="statement">
+<g fill="lightblue" stroke="#33322E" data-name="statement">
+<rect x="636.0" y="0.0" height="445.0" width="278.0" data-name="statement"></rect>
+<path d="M636.0 31.0 L914.0 31.0" fill="none" data-name="statement"></path>
+<path d="M636.0 437.0 L914.0 437.0" fill="none" data-name="statement"></path>
+</g>
+<g transform="translate(636, 0)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="statement">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="statement">
+<a id="../application/services/diagrams/serviceModels/statement.ts.statement" xlink:href="../application/services/diagrams/serviceModels/statement.ts"><text x="131.0" y="13.5" stroke="none" text-anchor="middle" data-name="statement">statement</text></a>
+
+</g>
+</g>
+<g transform="translate(636, 31)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="statement">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="statement">
+<text x="0.0" y="13.5" stroke="none" data-name="statement">+created_date: { type: Date</text>
+<text x="0.0" y="28.5" stroke="none" data-name="statement">}</text>
+<text x="0.0" y="43.5" stroke="none" data-name="statement">+created_by: { type: String</text>
+<text x="0.0" y="58.5" stroke="none" data-name="statement">}</text>
+<text x="0.0" y="73.5" stroke="none" data-name="statement">+last_modified_by: { type: String</text>
+<text x="0.0" y="88.5" stroke="none" data-name="statement">}</text>
+<text x="0.0" y="103.5" stroke="none" data-name="statement">+last_modified_date: { type: Date</text>
+<text x="0.0" y="118.5" stroke="none" data-name="statement">}</text>
+<text x="0.0" y="133.5" stroke="none" data-name="statement">+reconid: { type: String</text>
+<text x="0.0" y="148.5" stroke="none" data-name="statement">}</text>
+<text x="0.0" y="163.5" stroke="none" data-name="statement">+type: { type: Type</text>
+<text x="0.0" y="178.5" stroke="none" data-name="statement">}</text>
+<text x="0.0" y="193.5" stroke="none" data-name="statement">+transactiondate: { type: Date</text>
+<text x="0.0" y="208.5" stroke="none" data-name="statement">}</text>
+<text x="0.0" y="223.5" stroke="none" data-name="statement">+details: { type: String</text>
+<text x="0.0" y="238.5" stroke="none" data-name="statement">}</text>
+<text x="0.0" y="253.5" stroke="none" data-name="statement">+debit: { type: Number</text>
+<text x="0.0" y="268.5" stroke="none" data-name="statement">}</text>
+<text x="0.0" y="283.5" stroke="none" data-name="statement">+credit: { type: Number</text>
+<text x="0.0" y="298.5" stroke="none" data-name="statement">}</text>
+<text x="0.0" y="313.5" stroke="none" data-name="statement">+balance: { type: Number</text>
+<text x="0.0" y="328.5" stroke="none" data-name="statement">}</text>
+<text x="0.0" y="343.5" stroke="none" data-name="statement">+ismatch: { type: Boolean</text>
+<text x="0.0" y="358.5" stroke="none" data-name="statement">}</text>
+<text x="0.0" y="373.5" stroke="none" data-name="statement">+matchid: { type: String</text>
+<text x="0.0" y="388.5" stroke="none" data-name="statement">}</text>
+
+</g>
+</g>
+<g transform="translate(636, 437)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="statement">
+<g transform="translate(8, 8)" fill="#33322E" data-name="statement">
+
+</g>
+</g>
+</g>
+<g data-name="Type">
+<g fill="lightgreen" stroke="#33322E" data-name="Type">
+<rect x="954.0" y="184.0" height="77.0" width="110.0" data-name="Type"></rect>
+<path d="M954.0 215.0 L1064.0 215.0" fill="none" data-name="Type"></path>
+</g>
+<g transform="translate(954, 184)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Type">
+<g transform="translate(8, 8)" fill="#33322E" text-align="center" data-name="Type">
+<a id="../application/services/diagrams/serviceModels/statement.ts.Type" xlink:href="../application/services/diagrams/serviceModels/statement.ts"><text x="47.0" y="13.5" stroke="none" text-anchor="middle" data-name="Type">Type</text></a>
+
+</g>
+</g>
+<g transform="translate(954, 215)" font-family="Helvetica" font-size="12pt" font-weight="normal" font-style="normal" data-name="Type">
+<g transform="translate(8, 8)" fill="#33322E" text-align="left" data-name="Type">
+<text x="0.0" y="13.5" stroke="none" data-name="Type">BANK</text>
+<text x="0.0" y="28.5" stroke="none" data-name="Type">CASHBOOK</text>
+
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>

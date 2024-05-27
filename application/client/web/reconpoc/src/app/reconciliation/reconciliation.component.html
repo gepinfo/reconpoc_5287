@@ -1,0 +1,121 @@
+<nz-modal [(nzVisible)]="isVisibleCreate" [nzTitle]="'Create User'" [nzContent]="modalContentCreate" [nzFooter]="modalFooterCreate">
+      <ng-template #modalTitle>Create User</ng-template>
+      <ng-template #modalContentCreate>
+        <nz-form-label id="template-iqrk" class="label"  style="margin-top: 20px;" >reconstart</nz-form-label>
+        <input nz-input placeholder="Enter reconstart" [(ngModel)]="reconciliation.reconstart" [ngModelOptions]="{standalone: true}" ngDefaultControl class="input form-control "/>
+        <nz-form-label id="template-iqrk" class="label"  style="margin-top: 20px;" >reconend</nz-form-label>
+        <input nz-input placeholder="Enter reconend" [(ngModel)]="reconciliation.reconend" [ngModelOptions]="{standalone: true}" ngDefaultControl class="input form-control "/>
+        <nz-form-label id="template-iqrk" class="label"  style="margin-top: 20px;" >file_one</nz-form-label>
+        <input nz-input placeholder="Enter file_one" [(ngModel)]="reconciliation.file_one" [ngModelOptions]="{standalone: true}" ngDefaultControl class="input form-control "/>
+        <nz-form-label id="template-iqrk" class="label"  style="margin-top: 20px;" >file_two</nz-form-label>
+        <input nz-input placeholder="Enter file_two" [(ngModel)]="reconciliation.file_two" [ngModelOptions]="{standalone: true}" ngDefaultControl class="input form-control "/>
+        <nz-form-label id="template-iqrk" class="label"  style="margin-top: 20px;" >result_message</nz-form-label>
+        <input nz-input placeholder="Enter result_message" [(ngModel)]="reconciliation.result_message" [ngModelOptions]="{standalone: true}" ngDefaultControl class="input form-control "/>
+        <nz-form-label id="template-iqrk" class="label"  style="margin-top: 20px;" >discrepencies</nz-form-label>
+        <nz-select [(ngModel)]="reconciliation.discrepencies" [nzSize]="size" nzShowSearch>
+          <nz-option *ngFor="let option of discrepancyitemArray" [nzLabel]="option.label" [nzValue]="option.value"></nz-option>
+        </nz-select>
+      </ng-template>
+
+      <ng-template #modalFooterCreate>
+        <button nz-button nzType="default" (click)="handleCancel()">Cancel</button>
+        <button nz-button nzType="primary" (click)="Create()" >Create</button>
+      </ng-template>
+</nz-modal>
+
+<nz-modal [(nzVisible)]="isVisibleUpdate" [nzTitle]="'Update User'" [nzContent]="modalContentUpdate" [nzFooter]="modalFooterUpdate">
+  <ng-template #modalTitle>Update User</ng-template>
+  <ng-template #modalContentUpdate>
+    <nz-form-label id="template-iqrk" class="label"  style="margin-top: 20px;" >reconstart</nz-form-label>
+    <input nz-input placeholder="Enter reconstart" [(ngModel)]="reconciliation.reconstart" [ngModelOptions]="{standalone: true}" ngDefaultControl class="input form-control "/>
+    <nz-form-label id="template-iqrk" class="label"  style="margin-top: 20px;" >reconend</nz-form-label>
+    <input nz-input placeholder="Enter reconend" [(ngModel)]="reconciliation.reconend" [ngModelOptions]="{standalone: true}" ngDefaultControl class="input form-control "/>
+    <nz-form-label id="template-iqrk" class="label"  style="margin-top: 20px;" >file_one</nz-form-label>
+    <input nz-input placeholder="Enter file_one" [(ngModel)]="reconciliation.file_one" [ngModelOptions]="{standalone: true}" ngDefaultControl class="input form-control "/>
+    <nz-form-label id="template-iqrk" class="label"  style="margin-top: 20px;" >file_two</nz-form-label>
+    <input nz-input placeholder="Enter file_two" [(ngModel)]="reconciliation.file_two" [ngModelOptions]="{standalone: true}" ngDefaultControl class="input form-control "/>
+    <nz-form-label id="template-iqrk" class="label"  style="margin-top: 20px;" >result_message</nz-form-label>
+    <input nz-input placeholder="Enter result_message" [(ngModel)]="reconciliation.result_message" [ngModelOptions]="{standalone: true}" ngDefaultControl class="input form-control "/>
+    <nz-form-label id="template-iqrk" class="label"  style="margin-top: 20px;" >discrepencies</nz-form-label>
+    <nz-select [(ngModel)]="reconciliation.discrepencies" [nzSize]="size" nzShowSearch>
+      <nz-option *ngFor="let option of discrepancyitemArray" [nzLabel]="option.label" [nzValue]="option.value"></nz-option>
+    </nz-select>
+  </ng-template>
+
+  <ng-template #modalFooterUpdate>
+    <button nz-button nzType="default" (click)="handleCancel()">Cancel</button>
+    <button nz-button nzType="primary" (click)="Update()" >Update</button>
+  </ng-template>
+</nz-modal>
+
+
+<nz-input-group [nzSuffix]="suffixIconSearch" style="width: auto;">
+    <input type="text" nz-input placeholder="search..." [(ngModel)]="searchtickets" [ngModelOptions]="{standalone: true}" class="form-control" (ngModelChange)="search($event)"/>
+</nz-input-group>
+<ng-template #suffixIconSearch>
+    <span nz-icon nzType="search" ></span>
+</ng-template>
+
+<button nz-button style="float: right; background-color: #2c2cbb; color: #fff;" (click)="showModal()">
+    <span nz-icon nzType="file-add" nzTheme="outline"></span>
+    New User
+</button>
+
+<div nz-row style="margin: 25px 0;">
+    <div nz-col nzSpan="24">
+        <nz-table #filterTable [nzData]="listOfData" nzTableLayout="fixed">
+            <thead>
+              <tr>
+                <th nzColumnKey="reconstart" [nzSortFn]="true">reconstart</th>
+                <th nzColumnKey="reconend" [nzSortFn]="true">reconend</th>
+                <th nzColumnKey="file_one" [nzSortFn]="true">file_one</th>
+                <th nzColumnKey="file_two" [nzSortFn]="true">file_two</th>
+                <th nzColumnKey="result_message" [nzSortFn]="true">result_message</th>
+                <th nzColumnKey="discrepencies" [nzSortFn]="true">discrepencies</th>
+                <th nzColumnKey="status" [nzFilters]="filterStatus" [nzFilterFn]="true">Status</th>
+                <th nzWidth="100px"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of filterTable.data">
+                <td>{{ data.reconstart }}</td>
+                <td>{{ data.reconend }}</td>
+                <td>{{ data.file_one }}</td>
+                <td>{{ data.file_two }}</td>
+                <td>{{ data.result_message }}</td>
+                <td>{{ data.discrepencies }}</td>
+                <td>
+                  <nz-switch [ngModel]="true" nzCheckedChildren="Active" nzUnCheckedChildren="In-Active"></nz-switch>
+                </td>
+                <td>
+                    <a nz-dropdown [nzDropdownMenu]="menu"  style="color: gray; font-size: 15px;">
+                        ...
+                        <span nz-icon nzType="down"></span>
+                    </a>
+                    <nz-dropdown-menu #menu="nzDropdownMenu">
+                        <ul nz-menu>
+                          <li nz-menu-item (click)="getUpdateById(data)">Edit</li>
+                          <li nz-menu-item >
+                            <a
+                              nz-popconfirm
+                              nzPopconfirmTitle="Are you sure delete this task?"
+                              nzPopconfirmPlacement="bottom"
+                              (nzOnConfirm)="confirmDelete(data)"
+                              (nzOnCancel)="cancel()"
+                            >
+                              Delete
+                            </a>
+                          </li>
+                        </ul>
+                    </nz-dropdown-menu>
+                </td>
+              </tr>
+            </tbody>
+        </nz-table>
+    </div>
+</div>
+
+
+
+
+

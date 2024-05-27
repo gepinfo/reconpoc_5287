@@ -1,0 +1,228 @@
+---
+openapi: 3.0.0
+info:
+   version: 1.3.0
+   title: reconpoc open api specification
+   description: reconcile API
+   termsOfService: http://api_url/terms/
+   contact:
+      name: ContactName
+      email: hello@wolox.co
+      url: https://www.wolox.com.ar/
+   license:
+      name: Apache 2.0
+      url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+   - url: http://localhost:8016
+     description: reconcile
+tags:
+- name: reconciliation
+  description: holds results of the reconciliation process
+- name: discrepancy
+  description: captures the details for each diff
+- name: statement
+  description: holds basic information about statements
+paths:
+   "/reconciliation/{id}":
+      delete:
+         tags:
+         -  reconciliation
+         description: GpDelete
+         parameters:
+         -  in: "path"
+            description: GpDelete
+            name: id
+            required: true
+            schema:
+               type: "string"
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+      get:
+         tags:
+         -  reconciliation
+         description: GpGetEntityById
+         parameters:
+         -  in: "path"
+            description: GpGetEntityById
+            name: id
+            required: true
+            schema:
+               type: "string"
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+   "/reconciliation/get/search":
+      get:
+         tags:
+         -  reconciliation
+         description: GpSearch
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+   "/reconciliation/get/update":
+      put:
+         tags:
+         -  reconciliation
+         description: GpSearchForUpdate
+         requestBody:
+            content:
+               application/json:
+                  schema:
+                     $ref: "#/components/schemas/reconciliation"
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+   "/reconciliation":
+      put:
+         tags:
+         -  reconciliation
+         description: GpUpdate
+         requestBody:
+            content:
+               application/json:
+                  schema:
+                     $ref: "#/components/schemas/reconciliation"
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+      get:
+         tags:
+         -  reconciliation
+         description: GpGetAllValues
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+      post:
+         tags:
+         -  reconciliation
+         description: GpCreate
+         requestBody:
+            content:
+               application/json:
+                  schema:
+                     $ref: "#/components/schemas/reconciliation"
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+   "/reconciliation/userid/created_by":
+      get:
+         tags:
+         -  reconciliation
+         description: GpGetNounCreatedBy
+         responses:
+            200:
+               description: Success
+            400:
+               description: Bad Request
+            404:
+               description: Not Found
+            500:
+               description: Internal Server Error
+components:
+   schemas:
+      reconciliation:
+         type: object
+         properties:
+            reconstart:
+               type: "date"
+               description: start date for the recon
+            reconend:
+               type: "date"
+               description: end dated for the recon
+            file_one:
+               type: "string"
+               description: first file for the recon process
+            file_two:
+               type: "string"
+               description: file to compare with file_one
+            result_message:
+               type: "string"
+               description: general message for the results of the file compare
+            discrepencies:
+               type: "string"
+               description: Description
+      discrepancy:
+         type: object
+         properties:
+            discid:
+               type: "string"
+               description: Description
+            message:
+               type: "string"
+               description: Description
+            type:
+               type: "string"
+               description: Description
+      statement:
+         type: object
+         properties:
+            reconid:
+               type: "string"
+               description: id for the reconciliation run
+            type:
+               type: "string"
+               description: Description
+            transactiondate:
+               type: "date"
+               description: Description
+            details:
+               type: "string"
+               description: Description
+            debit:
+               type: "number"
+               description: Description
+            credit:
+               type: "number"
+               description: Description
+            balance:
+               type: "number"
+               description: Description
+            ismatch:
+               type: "boolean"
+               description: Description
+            matchid:
+               type: "string"
+               description: Description
