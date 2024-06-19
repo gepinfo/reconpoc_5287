@@ -19,7 +19,7 @@ do
          echo "UI build is done..."
 
          cd $COMPOSEPATH
-         NETWORK_NAME="reconpocnet"
+         NETWORK_NAME="reconpoc_5287_net"
          if docker network inspect "$NETWORK_NAME" >/dev/null 2>&1; then
                echo "-------------------The network '$NETWORK_NAME' already exists----------------------"
          else

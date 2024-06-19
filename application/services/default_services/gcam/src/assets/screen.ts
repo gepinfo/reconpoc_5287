@@ -5,5 +5,7 @@
 {"resources":"admin", "role":"Guest"}
     ,
 {"resources":"sefscreen", "role":"Guest"}
+    ,
+{"resources":"dummy", "role":"Guest"}
     
 ]

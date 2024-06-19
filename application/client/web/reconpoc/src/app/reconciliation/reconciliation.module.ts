@@ -44,7 +44,7 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
         NzMessageModule
     ],
     declarations: [
-        
+        ReconciliationComponent,
     ]
 })
 export class ReconciliationModule { }
